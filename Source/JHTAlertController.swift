@@ -208,7 +208,7 @@ public class JHTAlertController: UIViewController, UIViewControllerTransitioning
    /// The color of the border outline for the text field. The default color is gray.
    var textFieldBorderColor = UIColor.gray
    /// The type of border around the text field. Default is none
-   var textFieldBorderStyle = UITextBorderStyle.none
+   var textFieldBorderStyle = UITextField.BorderStyle.none
    private var textFieldContainerView = UIStackView()
    /// An override for the textfield to have rounded corners
    public var textFieldHasRoundedCorners = true
@@ -505,7 +505,7 @@ public class JHTAlertController: UIViewController, UIViewControllerTransitioning
    /// The handler method for the action. This is where the code is executed.
    ///
    /// - Parameter sender: the UIButton that was pressed
-   public func buttonTapped(sender: UIButton) {
+   @objc public func buttonTapped(sender: UIButton) {
       self.dismiss(animated: true, completion: nil)
       sender.isSelected = true
       let action = buttonActions[sender.tag - 1]
